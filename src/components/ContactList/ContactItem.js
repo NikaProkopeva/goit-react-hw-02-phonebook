@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
-import s from './ContactList.module.css';
+import contactlist from './ContactList.module.css';
 
 const ContactItem = ({ contact, onDelete }) => {
   const { id, name, number } = contact;
   return (
-    <li className={s.list__item}>
-      <p className={s.text}>{name}</p>
-      <p className={s.text}>{number}</p>
+    <li className={contactlist.list__item}>
+      <p className={contactlist.text}>{name}</p>
+      <p className={contactlist.text}>{number}</p>
       <button
-        className={s.button}
+        className={contactlist.button}
         type="button"
         id={id}
         onClick={e => {
@@ -24,6 +24,11 @@ const ContactItem = ({ contact, onDelete }) => {
     </li>
   );
 };
+
+// const confirmResult = window.confirm()
+// if (confirmResult) {
+//  onDelete()
+// }
 
 ContactItem.propTypes = {
   contact: PropTypes.shape({
